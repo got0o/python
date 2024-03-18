@@ -2,7 +2,7 @@
 nums = [9,10,8,1,4,6,2,3,5,7]
 
 def bubble_sort(num_list,order):
-    ans_list = num_list
+    ans_list = num_list.copy()
     index = 0
     nums_len = len(ans_list)
     while(index <= (nums_len-1)):
@@ -24,5 +24,8 @@ def bubble_sort(num_list,order):
         index += 1
     print(ans_list)
 
+
+
 bubble_sort(nums,"asc")
 bubble_sort(nums,"desc")
+print(nums)
