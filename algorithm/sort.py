@@ -1,6 +1,7 @@
 #数値のリストを入力として受け取り、ソート後のリストを表示する関数
 nums = [9,10,8,1,4,6,2,3,5,7]
 
+
 def bubble_sort(num_list,order):
     ans_list = num_list.copy()
     index = 0
@@ -58,11 +59,38 @@ def quick_sort(num_list,order):
 quick_sort(nums,"asc")
 quick_sort(nums,"desc")
 
+def insertion_sort(num_list, order):
+    ans_list = num_list.copy()
+    nums_len = len(ans_list)
+    for i in range(1,nums_len):
+        v = ans_list[i]
+        j = i - 1
+        if (order == "asc"):
+            while(j>=0 and ans_list[j] > v):
+                ans_list[j+1] = ans_list[j]
+                j -= 1
+        elif (order == "desc"):
+            while(j>=0 and ans_list[j] < v):
+                ans_list[j+1] = ans_list[j]
+                j -= 1
+        else:
+            print("Specify asc or desc as the second argument")
+        ans_list[j+1] = v
+    print(ans_list)
+    
+insertion_sort(nums,"asc")
+insertion_sort(nums,"desc")
 
-
-
-#以下は作業履歴
+#以下は作業履歴やコメント
 '''
+・実装済み
+バブルソート
+クイックソート
+挿入ソート
+・未実装
+マージソート
+選択ソート
+ヒープソート
 
 まずは元の関数を作成し、昇順、降順などを後で反映させた。
 def asc_bubble_sort(num_list):
